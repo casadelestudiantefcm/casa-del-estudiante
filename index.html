@@ -9,204 +9,746 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Casa del Estudiante</title>
+  <title>La Casa del Estudiante | FCM UNR</title>
 
   <style>
+
+    :root {
+      --azul: #1769aa;
+      --azul-oscuro: #0d4f85;
+      --azul-suave: #eaf4fb;
+      --celeste: #dceef9;
+
+      --texto: #24313d;
+      --texto-suave: #64717d;
+
+      --blanco: #ffffff;
+      --fondo: #f7fafc;
+      --borde: #dbe5ec;
+
+      --sombra:
+        0 12px 30px rgba(26, 70, 105, 0.08);
+    }
+
+
     * {
       box-sizing: border-box;
     }
 
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background:
+        var(--fondo);
+
+      color:
+        var(--texto);
     }
 
-    .pagina {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+
+    /* =========================
+       ENCABEZADO
+       ========================= */
+
+    .encabezado {
+      background:
+        var(--blanco);
+
+      border-bottom:
+        1px solid var(--borde);
     }
 
-    header {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      padding: 28px 20px;
-      text-align: center;
+
+    .barra-superior {
+      height: 7px;
+
+      background:
+        var(--azul);
     }
 
-    header h1 {
+
+    .identidad {
+      max-width: 1100px;
+
+      margin:
+        0 auto;
+
+      padding:
+        42px 24px 34px;
+
+      text-align:
+        center;
+    }
+
+
+    .identidad h1 {
+      margin:
+        0 0 14px;
+
+      font-size:
+        clamp(
+          38px,
+          6vw,
+          62px
+        );
+
+      line-height:
+        1;
+
+      font-weight:
+        700;
+
+      color:
+        var(--azul-oscuro);
+
+      letter-spacing:
+        -1.5px;
+    }
+
+
+    .facultad {
+      margin:
+        0 0 5px;
+
+      font-size:
+        21px;
+
+      font-weight:
+        600;
+
+      color:
+        var(--azul);
+    }
+
+
+    .universidad {
       margin: 0;
-      font-size: 34px;
+
+      font-size:
+        15px;
+
+      font-weight:
+        400;
+
+      color:
+        var(--texto-suave);
+
+      letter-spacing:
+        0.2px;
     }
 
-    header p {
-      margin: 8px 0 0;
-      color: #666;
-      font-size: 16px;
-    }
+
+    /* =========================
+       CONTENIDO GENERAL
+       ========================= */
 
     main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
+      max-width:
+        1050px;
+
+      margin:
+        0 auto;
+
+      padding:
+        46px 24px 70px;
     }
 
-    .contenedor {
-      width: 100%;
-      max-width: 900px;
+
+    section {
+      margin-bottom:
+        34px;
     }
 
-    .presentacion {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 32px;
-      text-align: center;
+
+    .titulo-seccion {
+      margin:
+        0 0 10px;
+
+      font-size:
+        27px;
+
+      color:
+        var(--azul-oscuro);
     }
 
-    .presentacion h2 {
-      margin-top: 0;
-      font-size: 28px;
+
+    .texto-seccion {
+      margin:
+        0;
+
+      max-width:
+        700px;
+
+      color:
+        var(--texto-suave);
+
+      line-height:
+        1.65;
+
+      font-size:
+        16px;
     }
 
-    .presentacion p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      line-height: 1.6;
-      color: #555;
+
+    /* =========================
+       RESERVA
+       ========================= */
+
+    .reserva {
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      background:
+        var(--blanco);
+
+      border:
+        1px solid var(--borde);
+
+      border-radius:
+        18px;
+
+      box-shadow:
+        var(--sombra);
+
+      padding:
+        38px;
     }
 
-    .acciones {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 28px;
+
+    .reserva::before {
+      content: "";
+
+      position:
+        absolute;
+
+      top:
+        0;
+
+      left:
+        0;
+
+      width:
+        7px;
+
+      height:
+        100%;
+
+      background:
+        var(--azul);
     }
 
-    .boton {
-      display: block;
-      text-decoration: none;
-      border-radius: 10px;
-      padding: 22px 18px;
-      font-size: 18px;
-      font-weight: bold;
-      border: 1px solid #bbb;
-      transition: transform .15s ease, background .15s ease;
+
+    .reserva-contenido {
+      max-width:
+        720px;
     }
 
-    .boton:hover {
-      transform: translateY(-2px);
+
+    .reserva h2 {
+      margin:
+        0 0 12px;
+
+      font-size:
+        30px;
+
+      color:
+        var(--azul-oscuro);
     }
 
-    .boton-publico {
-      background: #1f6f43;
-      color: white;
-      border-color: #1f6f43;
+
+    .reserva p {
+      margin:
+        0 0 26px;
+
+      line-height:
+        1.6;
+
+      color:
+        var(--texto-suave);
+
+      font-size:
+        16px;
     }
 
-    .boton-publico:hover {
-      background: #185936;
+
+    .boton-reserva {
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      min-height:
+        50px;
+
+      padding:
+        14px 24px;
+
+      border-radius:
+        9px;
+
+      text-decoration:
+        none;
+
+      background:
+        var(--azul);
+
+      color:
+        var(--blanco);
+
+      font-size:
+        16px;
+
+      font-weight:
+        600;
+
+      transition:
+        background .15s ease,
+        transform .15s ease,
+        box-shadow .15s ease;
     }
 
-    .boton-admin {
-      background: white;
-      color: #222;
+
+    .boton-reserva:hover {
+      background:
+        var(--azul-oscuro);
+
+      transform:
+        translateY(-1px);
+
+      box-shadow:
+        0 7px 16px
+        rgba(
+          23,
+          105,
+          170,
+          0.18
+        );
     }
 
-    .boton-admin:hover {
-      background: #f2f2f2;
+
+    /* =========================
+       CONTACTO
+       ========================= */
+
+    .contacto {
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        22px;
     }
 
-    .info {
-      margin-top: 26px;
-      font-size: 14px;
-      color: #666;
+
+    .contacto-presentacion {
+      padding:
+        28px 10px 28px 4px;
     }
+
+
+    .contacto-datos {
+      background:
+        var(--azul-suave);
+
+      border:
+        1px solid var(--celeste);
+
+      border-radius:
+        16px;
+
+      padding:
+        28px;
+    }
+
+
+    .contacto-datos h3 {
+      margin:
+        0 0 18px;
+
+      font-size:
+        18px;
+
+      color:
+        var(--azul-oscuro);
+    }
+
+
+    .dato-contacto {
+      margin-bottom:
+        14px;
+
+      line-height:
+        1.5;
+
+      font-size:
+        15px;
+    }
+
+
+    .dato-contacto:last-child {
+      margin-bottom:
+        0;
+    }
+
+
+    .dato-contacto strong {
+      display:
+        block;
+
+      margin-bottom:
+        2px;
+
+      color:
+        var(--texto);
+    }
+
+
+    .dato-contacto a {
+      color:
+        var(--azul);
+
+      text-decoration:
+        none;
+    }
+
+
+    .dato-contacto a:hover {
+      text-decoration:
+        underline;
+    }
+
+
+    /* =========================
+       PIE
+       ========================= */
 
     footer {
-      padding: 20px;
-      text-align: center;
-      font-size: 13px;
-      color: #777;
+      background:
+        var(--blanco);
+
+      border-top:
+        1px solid var(--borde);
+
+      padding:
+        28px 24px;
     }
+
+
+    .pie {
+      max-width:
+        1050px;
+
+      margin:
+        0 auto;
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        flex-end;
+
+      gap:
+        24px;
+    }
+
+
+    .pie-institucional {
+      font-size:
+        13px;
+
+      color:
+        var(--texto-suave);
+
+      line-height:
+        1.55;
+    }
+
+
+    .pie-institucional strong {
+      display:
+        block;
+
+      color:
+        var(--texto);
+
+      font-size:
+        14px;
+    }
+
+
+    .administracion {
+      font-size:
+        12px;
+    }
+
+
+    .administracion a {
+      color:
+        #8a949d;
+
+      text-decoration:
+        none;
+    }
+
+
+    .administracion a:hover {
+      color:
+        var(--azul);
+    }
+
+
+    /* =========================
+       CELULAR
+       ========================= */
 
     @media(max-width: 700px) {
-      header h1 {
-        font-size: 28px;
+
+      .identidad {
+        padding:
+          34px 18px 28px;
       }
 
-      .presentacion {
-        padding: 24px 18px;
+
+      .facultad {
+        font-size:
+          18px;
       }
 
-      .acciones {
-        grid-template-columns: 1fr;
+
+      .universidad {
+        font-size:
+          14px;
       }
 
-      .boton {
-        font-size: 17px;
+
+      main {
+        padding:
+          30px 15px 50px;
       }
+
+
+      .reserva {
+        padding:
+          28px 22px 28px 28px;
+      }
+
+
+      .reserva h2 {
+        font-size:
+          26px;
+      }
+
+
+      .boton-reserva {
+        width:
+          100%;
+      }
+
+
+      .contacto {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .contacto-presentacion {
+        padding:
+          15px 4px 0;
+      }
+
+
+      .pie {
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-<div class="pagina">
 
-  <header>
-    <h1>Casa del Estudiante</h1>
-    <p>Facultad de Ciencias Médicas – Universidad Nacional de Rosario</p>
-  </header>
+  <!-- ENCABEZADO -->
 
-  <main>
-    <div class="contenedor">
+  <header class="encabezado">
 
-      <section class="presentacion">
+    <div class="barra-superior"></div>
 
-        <h2>Reservas de espacios</h2>
+    <div class="identidad">
 
-        <p>
-          Desde aquí podés solicitar el uso de los espacios de la Casa del Estudiante
-          o ingresar al sistema de administración de reservas.
-        </p>
+      <h1>
+        La Casa del Estudiante
+      </h1>
 
-        <div class="acciones">
+      <p class="facultad">
+        Facultad de Ciencias Médicas
+      </p>
 
-          <a
-            class="boton boton-publico"
-            href="#"
-          >
-            Solicitar reserva de un espacio
-          </a>
-
-          <a
-            class="boton boton-admin"
-            href="#"
-          >
-            Administración de reservas
-          </a>
-
-        </div>
-
-        <div class="info">
-          Casa del Estudiante · Facultad de Ciencias Médicas · UNR
-        </div>
-
-      </section>
+      <p class="universidad">
+        Universidad Nacional de Rosario
+      </p>
 
     </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- RESERVAS -->
+
+    <section class="reserva">
+
+      <div class="reserva-contenido">
+
+        <h2>
+          Reserva de espacios
+        </h2>
+
+        <p>
+          La Casa del Estudiante cuenta con distintos
+          espacios destinados a actividades académicas,
+          culturales, recreativas, institucionales y
+          comunitarias.
+        </p>
+
+        <a
+          class="boton-reserva"
+          href="#"
+        >
+          Solicitar reserva de un espacio
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CONTACTO -->
+
+    <section class="contacto">
+
+      <div class="contacto-presentacion">
+
+        <h2 class="titulo-seccion">
+          Contacto
+        </h2>
+
+        <p class="texto-seccion">
+          Para consultas sobre los espacios,
+          actividades o funcionamiento de la Casa,
+          podés comunicarte con nuestro equipo.
+        </p>
+
+      </div>
+
+
+      <div class="contacto-datos">
+
+        <h3>
+          La Casa del Estudiante
+        </h3>
+
+        <div class="dato-contacto">
+
+          <strong>
+            Correo electrónico
+          </strong>
+
+          <a
+            href="mailto:casadelestudiante2026@gmail.com"
+          >
+            casadelestudiante2026@gmail.com
+          </a>
+
+        </div>
+
+
+        <div class="dato-contacto">
+
+          <strong>
+            Institución
+          </strong>
+
+          Facultad de Ciencias Médicas
+          <br>
+          Universidad Nacional de Rosario
+
+        </div>
+
+      </div>
+
+    </section>
+
+
   </main>
 
+
+
+  <!-- PIE -->
+
   <footer>
-    Casa del Estudiante – Universidad Nacional de Rosario
+
+    <div class="pie">
+
+      <div class="pie-institucional">
+
+        <strong>
+          La Casa del Estudiante
+        </strong>
+
+        Facultad de Ciencias Médicas
+        <br>
+
+        Universidad Nacional de Rosario
+
+      </div>
+
+
+      <div class="administracion">
+
+        <a href="#">
+          Acceso administrativo
+        </a>
+
+      </div>
+
+    </div>
+
   </footer>
 
-</div>
 
 </body>
 
